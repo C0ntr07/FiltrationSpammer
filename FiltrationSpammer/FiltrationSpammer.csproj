@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CD2992A8-1115-44E1-B95B-12ACB53609B0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>FiltrationSpammer</RootNamespace>
     <AssemblyName>FiltrationSpammer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

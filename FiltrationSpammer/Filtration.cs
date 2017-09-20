@@ -20,16 +20,12 @@ namespace FiltrationSpammer {
          *      2.1 properly clean up running instances instead of just removing them. (x)
          *      2.5 other misc stuff (??)
          * 
-         * 
          */
 
         private io ion2 = new io();
         private ion.User u;
 
-
         private Dictionary<string, Spammer> Q;
-
-
         private ContextMenuStrip ls;
 
         private ion.strings strings = new ion.strings();

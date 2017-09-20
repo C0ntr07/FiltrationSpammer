@@ -67,9 +67,6 @@ namespace FiltrationSpammer {
 
         }
 
-
-
-
         public Spammer manualStart(bool startThis) {
             if (!startThis) return this;
             if (active) return this; // don't try to run the same thread twice.
@@ -91,21 +88,15 @@ namespace FiltrationSpammer {
             return status;
         }
 
-
         ~Spammer() {
             this.Stop();
-
-
         }
-
         private void cycleStart() {
             TwilioClient.Init(accountID, authToken);
             active = true;
             setBreak = false;
-
             subStatus = "Creating Thread";
-
-            new Thread(() => {
+            new Thread(() => { // unmanaged anon thread
                 while (active) {
                     if (setBreak != false) break; // breaks out of loop, kills thread.
                     if (inProgress) return;
@@ -116,20 +107,15 @@ namespace FiltrationSpammer {
                         numberIndex = 0;
                         tmpNumber = outgoingNumbers[0];
                     }
-
                     Call(numberToCall, tmpNumber);
-
-                    cnt += 1;
+                    cnt += 1; // work counter.
                     Thread.Sleep(1000);
                 }
-
-
-
             }).Start();
         }
 
         private void Call(string number, string fromNumber) {
-
+            // this is NOT done right. Sorry, I've been drinking while coding this.
             if (mc != null) {
                 if (mc.Status == CallResource.UpdateStatusEnum.Completed) {
                     inProgress = false;
