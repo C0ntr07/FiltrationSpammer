@@ -8,8 +8,8 @@ Filtration phone spammer offers you the chance to spam phone numbers >>of scamme
 <td><img src="https://i.imgur.com/jo7pkM4.png"></td>
 
 
-
 - You will need a Twilio account. You can register and get one here: https://www.twilio.com/
-- Open the program and click Tools > Settings. Add your AuthToken and Account ID, and Spam Message
-- Once saved, close the settings and add the number in to the text box you would like to spam, and click "Spam"
-- It will now spam call that phone with the specified message.
+- Simple to use, check the settings tab for inputting your twilio account SID and Auth key.
+- Add multiple outgoing numbers to cycle through
+- Custom settings class (ion.cs) for serializing all settings into (%APPDATA%\Scamira Anti-scam solutions\FiltrationSpammer\1.0.0.0\settings.json)
+- Leave no scammer un-dialed!
