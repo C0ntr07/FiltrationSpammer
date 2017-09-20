@@ -38,6 +38,8 @@
             this.thrIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusMsgHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.outboundNumbers = new System.Windows.Forms.ListBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.voiceMsgTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.outboundNumbers = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -150,6 +150,7 @@
             this.offenderNumberTxt.Name = "offenderNumberTxt";
             this.offenderNumberTxt.Size = new System.Drawing.Size(164, 20);
             this.offenderNumberTxt.TabIndex = 4;
+            this.offenderNumberTxt.TextChanged += new System.EventHandler(this.offenderNumberTxt_TextChanged);
             // 
             // taskAddBtn
             // 
@@ -219,6 +220,24 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // outboundNumbers
+            // 
+            this.outboundNumbers.FormattingEnabled = true;
+            this.outboundNumbers.Location = new System.Drawing.Point(333, 63);
+            this.outboundNumbers.Name = "outboundNumbers";
+            this.outboundNumbers.Size = new System.Drawing.Size(303, 69);
+            this.outboundNumbers.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(336, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(246, 39);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Please only enter numbers you own on Twilio.\r\nInvald numbers will cause the call " +
+    "to fail and errors\r\nto appear on your twilio programmable voice menu.";
             // 
             // panel3
             // 
@@ -393,24 +412,6 @@
             this.textBox2.Size = new System.Drawing.Size(644, 220);
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = resources.GetString("textBox2.Text");
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(336, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(246, 39);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Please only enter numbers you own on Twilio.\r\nInvald numbers will cause the call " +
-    "to fail and errors\r\nto appear on your twilio programmable voice menu.";
-            // 
-            // outboundNumbers
-            // 
-            this.outboundNumbers.FormattingEnabled = true;
-            this.outboundNumbers.Location = new System.Drawing.Point(333, 63);
-            this.outboundNumbers.Name = "outboundNumbers";
-            this.outboundNumbers.Size = new System.Drawing.Size(303, 69);
-            this.outboundNumbers.TabIndex = 12;
             // 
             // Filtration
             // 

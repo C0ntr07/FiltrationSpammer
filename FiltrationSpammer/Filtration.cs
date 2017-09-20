@@ -15,10 +15,10 @@ namespace FiltrationSpammer {
 
         /*
          *  TODO from lvt
-         *      1. actually run 'spam' function
-         *      2. give each SPins (Spam instance) it's own set of numbers, or all of them to loop through.
-         *      2.1 properly clean up running instances instead of just removing them.
-         *      2.5 other misc stuff
+         *      1. actually run 'spam' function (x)
+         *      2. give each SPins (Spam instance) it's own set of numbers, or all of them to loop through. (x)
+         *      2.1 properly clean up running instances instead of just removing them. (x)
+         *      2.5 other misc stuff (??)
          * 
          * 
          */
@@ -45,6 +45,7 @@ namespace FiltrationSpammer {
                 voiceMsgTxt.Text = (string)ion2.settings.Get("tts");
                 checkBox1.Checked = (bool)ion2.settings.Get("autoStartJob");
                 checkBox2.Checked = (bool)ion2.settings.Get("recordAudio");
+                offenderNumberTxt.Text = (string)ion2.settings.Get("faceNumber");
                 System.Collections.ArrayList ar = (System.Collections.ArrayList)ion2.settings.Get("tNum");
                 foreach (string at in ar.Cast<string>()) {
                     outboundNumbers.Items.Add(at);
@@ -97,11 +98,9 @@ namespace FiltrationSpammer {
                 if (listView1.SelectedItems.Count < 1) return;
                 listView1.ContextMenu.MenuItems[0].Enabled = true;
                 if (taskIsActive((string)listView1.SelectedItems[0].Tag)) {
-                    ls2.Enabled = true;
-                    ls3.Enabled = false;
-                } else {
-                    ls2.Enabled = false;
                     ls3.Enabled = true;
+                } else {
+                    ls2.Enabled = true;
                 }
             };
 
@@ -155,7 +154,23 @@ namespace FiltrationSpammer {
 
         #region "TaskPool"
         // -- some stuff goes here that keeps track of the task pool list and interacts with it.
-        public void addTask(Spammer sp) {
+        public void addTask() {
+            ion.User u = new ion.User();
+            string tmpTaskID = strings.TruncateString(u.genID, 10);
+            string[] tmpout = outboundNumbers.Items.OfType<string>().ToArray();
+            Spammer sp = new Spammer() {
+                numberToCall = offenderNumberTxt.Text,
+                recordAudio = checkBox2.Checked,
+                autoStart = checkBox1.Checked,
+                taskID = tmpTaskID,
+                //accountID = (string)ion2.settings.Get("accid"),
+                accountID = textBox3.Text,
+                //authToken = (string)ion2.settings.Get("authsecret"),
+                authToken = textBox4.Text,
+                outgoingNumbers = tmpout,
+                sayMessage = voiceMsgTxt.Text
+            };
+            u = null;
             ListViewItem tmp = new ListViewItem() {
                 Name = "JobTask_" + sp.taskID,
                 Tag = (string)sp.taskID,
@@ -163,9 +178,7 @@ namespace FiltrationSpammer {
             };
             tmp.SubItems.Add("Idle");
             listView1.Items.Add(tmp);
-            sp.Go();
-            Q.Add(sp.taskID, sp);
-            sp = null;
+            Q.Add(sp.taskID, sp.manualStart(sp.autoStart));
         }
 
         public void removeTask(string threadID) {
@@ -189,7 +202,7 @@ namespace FiltrationSpammer {
         }
 
         private void startTask(string threadID) {
-            if (Q.ContainsKey(threadID)) Q[threadID].manualStart();
+            if (Q.ContainsKey(threadID)) Q[threadID].manualStart(true);
         }
 
         public void updateStatus(string threadID, string msg) {
@@ -236,18 +249,7 @@ namespace FiltrationSpammer {
         }
 
         private void taskAddBtn_Click(object sender, EventArgs e) {
-            ion.User u = new ion.User();
-            string tmpTaskID = strings.TruncateString(u.genID, 10);
-            addTask(new Spammer() {
-                numberToCall = offenderNumberTxt.Text,
-                recordAudio = checkBox2.Checked,
-                autoStart = checkBox1.Checked,
-                taskID = tmpTaskID,
-                accountID = (string)ion2.settings.Get("accid"),
-                authToken = (string)ion2.settings.Get("authsecret"),
-                active = false
-            });
-            u = null;
+            addTask();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
@@ -282,6 +284,10 @@ namespace FiltrationSpammer {
 
         private void voiceMsgTxt_TextChanged(object sender, EventArgs e) {
             ion2.settings.Set("tts", voiceMsgTxt.Text);
+        }
+
+        private void offenderNumberTxt_TextChanged(object sender, EventArgs e) {
+            ion2.settings.Set("faceNumber", (string)offenderNumberTxt.Text);
         }
     }
 }
