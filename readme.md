@@ -1,10 +1,10 @@
 <p align="center"><img src="http://i.imgur.com/RBPGDSr.png" height="300"></p>
 
-# About Filtration Phone Spammer
+# About (Improved) Filtration Phone Spammer (WIP)
 
-Filtration phone spammer offers you the chance to spam phone numbers with your desired message. Customize your message, add multiple numbers and enjoy
+Filtration phone spammer offers you the chance to spam phone numbers >>of scammers<< with your desired message. Customize your message, add multiple numbers and enjoy
 
-
+# Original Description and images
 <td><img src="http://i.imgur.com/JSy33GF.png" height="300" hspace="20"></td><td><img src="http://i.imgur.com/hSwMdU3.png" width="500" hspace="20"></td>
 
 

@@ -17,25 +17,6 @@ c:/users/laptop/documents/visual studio 2017/Projects/FiltrationSpammer/Filtrati
 c:/users/laptop/documents/visual studio 2017/Projects/FiltrationSpammer/FiltrationSpammer/bin/Debug/Twilio.xml
 c:/users/laptop/documents/visual studio 2017/Projects/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.exe
 c:/users/laptop/documents/visual studio 2017/Projects/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.pdb
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/FiltrationSpammer.exe.config
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/FiltrationSpammer.exe
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/FiltrationSpammer.pdb
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/Microsoft.IdentityModel.Logging.dll
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/Microsoft.IdentityModel.Tokens.dll
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/Newtonsoft.Json.dll
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/System.IdentityModel.Tokens.Jwt.dll
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/Microsoft.IdentityModel.Logging.xml
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/Microsoft.IdentityModel.Tokens.xml
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/Newtonsoft.Json.xml
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/System.IdentityModel.Tokens.Jwt.xml
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.csproj.FiltrationSpammer.exe.config
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.Filtration.resources
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.Properties.Resources.resources
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.settings.resources
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.csproj.GenerateResource.Cache
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.exe
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.pdb
-C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.csprojResolveAssemblyReference.cache
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/FiltrationSpammer.exe.config
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/FiltrationSpammer.exe
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Debug/FiltrationSpammer.pdb
@@ -56,3 +37,21 @@ C:/Users/Lennon/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.csproj.CoreCompileInputs.cache
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.exe
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Debug/FiltrationSpammer.pdb
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\FiltrationSpammer.exe.config
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\FiltrationSpammer.exe
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\FiltrationSpammer.pdb
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.csproj.FiltrationSpammer.exe.config
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.Filtration.resources
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.Properties.Resources.resources
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.settings.resources
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.csproj.GenerateResource.Cache
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.exe
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.pdb

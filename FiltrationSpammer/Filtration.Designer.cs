@@ -38,6 +38,9 @@
             this.thrIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusMsgHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.twilioNumberTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.twilioNumList = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -51,9 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.twilioNumberTxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -101,11 +101,11 @@
             // 
             this.counterLbl.AutoSize = true;
             this.counterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.counterLbl.Location = new System.Drawing.Point(8, 149);
+            this.counterLbl.Location = new System.Drawing.Point(8, 173);
             this.counterLbl.Name = "counterLbl";
-            this.counterLbl.Size = new System.Drawing.Size(41, 13);
+            this.counterLbl.Size = new System.Drawing.Size(91, 13);
             this.counterLbl.TabIndex = 8;
-            this.counterLbl.Text = "label5";
+            this.counterLbl.Text = "Task Queue: 0";
             // 
             // checkBox2
             // 
@@ -148,9 +148,9 @@
             // 
             // taskAddBtn
             // 
-            this.taskAddBtn.Location = new System.Drawing.Point(97, 87);
+            this.taskAddBtn.Location = new System.Drawing.Point(6, 87);
             this.taskAddBtn.Name = "taskAddBtn";
-            this.taskAddBtn.Size = new System.Drawing.Size(75, 23);
+            this.taskAddBtn.Size = new System.Drawing.Size(166, 23);
             this.taskAddBtn.TabIndex = 3;
             this.taskAddBtn.Text = "Add ->";
             this.taskAddBtn.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 165);
+            this.button1.Location = new System.Drawing.Point(6, 189);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 23);
             this.button1.TabIndex = 2;
@@ -186,7 +186,7 @@
             // thrIDHeader
             // 
             this.thrIDHeader.Text = "ThreadID ";
-            this.thrIDHeader.Width = 93;
+            this.thrIDHeader.Width = 92;
             // 
             // statusMsgHeader
             // 
@@ -213,6 +213,33 @@
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(514, 162);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(122, 20);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Remove Number";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(330, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(184, 26);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Warning: Numbers are not validated.\r\nPlease use  the +1234567890 format.";
+            // 
+            // twilioNumberTxt
+            // 
+            this.twilioNumberTxt.Location = new System.Drawing.Point(333, 137);
+            this.twilioNumberTxt.Name = "twilioNumberTxt";
+            this.twilioNumberTxt.Size = new System.Drawing.Size(175, 20);
+            this.twilioNumberTxt.TabIndex = 7;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -235,7 +262,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(514, 123);
+            this.button3.Location = new System.Drawing.Point(514, 136);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 20);
             this.button3.TabIndex = 4;
@@ -247,7 +274,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(6, 137);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(233, 29);
+            this.button2.Size = new System.Drawing.Size(321, 58);
             this.button2.TabIndex = 3;
             this.button2.Text = "Save Settings";
             this.button2.UseVisualStyleBackColor = true;
@@ -315,9 +342,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(141, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Twilio Account ID";
+            this.label1.Text = "Twilio Account ID (SID)";
             // 
             // tabPage3
             // 
@@ -342,33 +369,6 @@
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = resources.GetString("textBox2.Text");
             // 
-            // twilioNumberTxt
-            // 
-            this.twilioNumberTxt.Location = new System.Drawing.Point(333, 123);
-            this.twilioNumberTxt.Name = "twilioNumberTxt";
-            this.twilioNumberTxt.Size = new System.Drawing.Size(175, 20);
-            this.twilioNumberTxt.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(330, 146);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(184, 26);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Warning: Numbers are not validated.\r\nPlease use  the +1234567890 format.";
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(514, 146);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 20);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Remove Number";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // Filtration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,7 +378,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Filtration";
-            this.Text = "Filtration Spammer (improved) -Superior Anti-scammer toolkit";
+            this.Text = "Filtration Spammer (improved) | Superior Anti-scammer toolkit";
             this.Load += new System.EventHandler(this.load);
             this.Shown += new System.EventHandler(this.Loaded);
             this.tabControl1.ResumeLayout(false);

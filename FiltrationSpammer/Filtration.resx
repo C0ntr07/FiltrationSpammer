@@ -124,18 +124,18 @@
     <value>Original Project URL: https://github.com/filtration/FiltrationSpammer
 
 An improved, multi-number capable version with asyncronous
-tasks. Found more than one number? No need to stop.
+tasks. Found more than one number? No need to stop and start over.
+
+You must have a twilio account to use this application. You may use
+their free trial. I recommend using a paid one, and filling it with at least $20
+if you plan on letting the application run for long periods of time, wasting a
+scammer's time.
 
 Disclaimer: I am not responsible if you use this application for
 malicious purposes. This program is intended to be used as a
 deterrant for tech support scammers, IRS scammers, and the like.
 
-Like this project? Leave me feedback on github.
-
-NOTE: You must have a twilio account to use this application. You may use
-their free trial. I recommend using a paid one, and filling it with at least $20
-if you plan on letting the application run for long periods of time, wasting a
-scammer's time.</value>
+Like this project? Leave me feedback on github.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{CD2992A8-1115-44E1-B95B-12ACB53609B0}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FiltrationSpammer Status">
+    <Files>
+      <File FileName="FiltrationSpammer/Filtration.cs" Line="20" Column="37" />
+      <File FileName="FiltrationSpammer Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FiltrationSpammer PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

@@ -64,7 +64,6 @@ namespace FiltrationSpammer {
             if (active) return; // don't try to run the same thread twice.
             if (tw == null) tStart();
             cycleStart();
-
         }
         public void Stop() {
             if (tw != null) tw.Stop(); tw = null;
