@@ -38,11 +38,13 @@
             this.thrIDHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusMsgHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.voiceMsgTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.twilioNumberTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.twilioNumList = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,9 +56,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.outboundNumbers = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -195,11 +200,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.outboundNumbers);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.twilioNumberTxt);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.twilioNumList);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label4);
@@ -212,6 +219,34 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.voiceMsgTxt);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Location = new System.Drawing.Point(6, 103);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(321, 43);
+            this.panel3.TabIndex = 10;
+            // 
+            // voiceMsgTxt
+            // 
+            this.voiceMsgTxt.Location = new System.Drawing.Point(3, 16);
+            this.voiceMsgTxt.MaxLength = 250;
+            this.voiceMsgTxt.Name = "voiceMsgTxt";
+            this.voiceMsgTxt.Size = new System.Drawing.Size(306, 20);
+            this.voiceMsgTxt.TabIndex = 1;
+            this.voiceMsgTxt.TextChanged += new System.EventHandler(this.voiceMsgTxt_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(5, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(278, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Text-to-speech message to say (Max 250 chars)";
             // 
             // button4
             // 
@@ -250,16 +285,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "My Numbers (Twilio Phone Numbers)";
             // 
-            // twilioNumList
-            // 
-            this.twilioNumList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.twilioNumList.FormattingEnabled = true;
-            this.twilioNumList.Location = new System.Drawing.Point(333, 22);
-            this.twilioNumList.Name = "twilioNumList";
-            this.twilioNumList.Size = new System.Drawing.Size(303, 93);
-            this.twilioNumList.TabIndex = 5;
-            this.twilioNumList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(514, 136);
@@ -272,9 +297,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 137);
+            this.button2.Location = new System.Drawing.Point(6, 162);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(321, 58);
+            this.button2.Size = new System.Drawing.Size(321, 33);
             this.button2.TabIndex = 3;
             this.button2.Text = "Save Settings";
             this.button2.UseVisualStyleBackColor = true;
@@ -294,14 +319,14 @@
             // 
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(6, 70);
+            this.panel2.Location = new System.Drawing.Point(6, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(321, 61);
+            this.panel2.Size = new System.Drawing.Size(321, 43);
             this.panel2.TabIndex = 1;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 28);
+            this.textBox4.Location = new System.Drawing.Point(3, 16);
             this.textBox4.MaxLength = 150;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(306, 20);
@@ -312,7 +337,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 12);
+            this.label2.Location = new System.Drawing.Point(5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 13);
             this.label2.TabIndex = 0;
@@ -324,12 +349,12 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(321, 64);
+            this.panel1.Size = new System.Drawing.Size(321, 43);
             this.panel1.TabIndex = 0;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 28);
+            this.textBox3.Location = new System.Drawing.Point(3, 16);
             this.textBox3.MaxLength = 100;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(306, 20);
@@ -340,7 +365,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 12);
+            this.label1.Location = new System.Drawing.Point(5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 13);
             this.label1.TabIndex = 0;
@@ -369,6 +394,24 @@
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = resources.GetString("textBox2.Text");
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(336, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(246, 39);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Please only enter numbers you own on Twilio.\r\nInvald numbers will cause the call " +
+    "to fail and errors\r\nto appear on your twilio programmable voice menu.";
+            // 
+            // outboundNumbers
+            // 
+            this.outboundNumbers.FormattingEnabled = true;
+            this.outboundNumbers.Location = new System.Drawing.Point(333, 63);
+            this.outboundNumbers.Name = "outboundNumbers";
+            this.outboundNumbers.Size = new System.Drawing.Size(303, 69);
+            this.outboundNumbers.TabIndex = 12;
+            // 
             // Filtration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +420,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Filtration";
             this.Text = "Filtration Spammer (improved) | Superior Anti-scammer toolkit";
             this.Load += new System.EventHandler(this.load);
@@ -386,6 +430,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -420,13 +466,17 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox twilioNumList;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label counterLbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox twilioNumberTxt;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox voiceMsgTxt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListBox outboundNumbers;
     }
 }
 

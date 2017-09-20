@@ -84,4 +84,13 @@ namespace ion {
         }
 
     }
+
+    public class PhoneNumber2 {
+        private string n  {get;set;}
+        public string PhoneNumber(string Number) {
+            n = Number.Trim();
+            return n;
+        }
+
+    }
 }

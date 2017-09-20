@@ -42,11 +42,23 @@ namespace FiltrationSpammer {
             try {
                 textBox3.Text = (string)ion2.settings.Get("accid");
                 textBox4.Text = (string)ion2.settings.Get("authsecret");
+                voiceMsgTxt.Text = (string)ion2.settings.Get("tts");
                 checkBox1.Checked = (bool)ion2.settings.Get("autoStartJob");
                 checkBox2.Checked = (bool)ion2.settings.Get("recordAudio");
-                twilioNumList = (ListBox)ion2.settings.Get("twilioNumbers");
-            } catch (Exception ec) {
+                System.Collections.ArrayList ar = (System.Collections.ArrayList)ion2.settings.Get("tNum");
+                foreach (string at in ar.Cast<string>()) {
+                    outboundNumbers.Items.Add(at);
 
+
+
+                }
+
+
+
+
+
+            } catch (Exception ec) {
+                Console.WriteLine(ec.Message);
             }
 
         }
@@ -72,7 +84,6 @@ namespace FiltrationSpammer {
                 startTask((string)listView1.SelectedItems[0].Tag);
             };
             ls3.Click += (wi, ck) => {
-
                 if (listView1.SelectedItems.Count < 1) return;
                 stopTask((string)listView1.SelectedItems[0].Tag);
             };
@@ -80,7 +91,7 @@ namespace FiltrationSpammer {
             listView1.ContextMenu.MenuItems.Add(ls2);
             listView1.ContextMenu.MenuItems.Add(ls3);
             listView1.ContextMenu.Popup += (df, vn) => {
-                foreach(MenuItem lt in listView1.ContextMenu.MenuItems) {
+                foreach (MenuItem lt in listView1.ContextMenu.MenuItems) {
                     lt.Enabled = false;
                 }
                 if (listView1.SelectedItems.Count < 1) return;
@@ -173,7 +184,7 @@ namespace FiltrationSpammer {
 
         public bool taskIsActive(string threadID) {
             bool tmp = false;
-            if (threadID=="") return tmp;
+            if (threadID == "") return tmp;
             return Q[threadID].active;
         }
 
@@ -203,7 +214,7 @@ namespace FiltrationSpammer {
         }
 
         private void button1_Click_1(object sender, EventArgs e) {
-            if (MessageBox.Show("Stop all tasks?","Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+            if (MessageBox.Show("Stop all tasks?", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                 foreach (Spammer spc in Q.Values) {
                     spc.Stop();
                 }
@@ -211,7 +222,7 @@ namespace FiltrationSpammer {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-
+            ion2.saveSettings();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e) {
@@ -233,7 +244,8 @@ namespace FiltrationSpammer {
                 autoStart = checkBox1.Checked,
                 taskID = tmpTaskID,
                 accountID = (string)ion2.settings.Get("accid"),
-                authToken = (string)ion2.settings.Get("authsecret")
+                authToken = (string)ion2.settings.Get("authsecret"),
+                active = false
             });
             u = null;
         }
@@ -250,19 +262,26 @@ namespace FiltrationSpammer {
             if (twilioNumberTxt.Text == "") return; // don't add a blank value.
             string tmp = twilioNumberTxt.Text;
             tmp = tmp.Replace(" ", ""); // replace the space!
-            twilioNumList.Items.Add(twilioNumberTxt.Text.Trim());
-            ion2.settings.Set("twilioNumbers", twilioNumList);
+            outboundNumbers.Items.Add(tmp.Trim());
+
+            ion2.settings.Set("tNum", outboundNumbers.Items);
+            saveSettings();
+            twilioNumberTxt.Text = "";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            if (twilioNumList.SelectedIndex < 0) { button4.Enabled = false; return; }
+            if (outboundNumbers.SelectedIndex == -1) { button4.Enabled = false; return; }
             button4.Enabled = true;
 
         }
 
         private void button4_Click(object sender, EventArgs e) {
-            if (twilioNumList.SelectedIndex == -1) return;
-            twilioNumList.Items.Remove(twilioNumList.SelectedIndex);
+            if (outboundNumbers.SelectedIndex == -1) return;
+            outboundNumbers.Items.RemoveAt(outboundNumbers.SelectedIndex);
+        }
+
+        private void voiceMsgTxt_TextChanged(object sender, EventArgs e) {
+            ion2.settings.Set("tts", voiceMsgTxt.Text);
         }
     }
 }

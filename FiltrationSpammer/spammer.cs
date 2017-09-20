@@ -34,6 +34,8 @@ namespace FiltrationSpammer {
         private int cnt = 0;
         private string subStatus = "";
 
+        private CallResource mc;
+
         private System.Windows.Forms.Timer tw = null;
 
         public void spammerold(string spamnumber) {
@@ -79,10 +81,21 @@ namespace FiltrationSpammer {
             tw = new System.Windows.Forms.Timer();
             tw.Interval = 250;
             tw.Tick += (ecv, vn) => {
-                status = (string)((active == true) ? "Active (" + cnt + "s) - " + subStatus : "Inactive");
+                if(active) {
+                    status = (string)"Active -> (" + cnt + "s)" + " | " + subStatus;
+                } else {
+                    status = (string)"Paused | " + subStatus;
+                }
+               
             };
             tw.Start();
 
+        }
+
+        ~Spammer() {
+            this.Stop();
+
+            
         }
 
         private void cycleStart() { // threaded
@@ -105,7 +118,7 @@ namespace FiltrationSpammer {
 
         private void Call(string number) {
             try {
-                var call = CallResource.Create(
+                mc = CallResource.Create(
                     to: new PhoneNumber(numberToCall),
                     from: new PhoneNumber(number),
                     record: recordAudio,
