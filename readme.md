@@ -8,8 +8,7 @@ FiltrationSpammer enables scambaiters to spam phone lines of scammers with your 
 <td><img src="https://i.imgur.com/jo7pkM4.png"></td>
 
 # Known Issues:
-- Spammer thread does not properly wait for call to end/fail. (Easily fixable, just don’t have much time)
-- Message playing (to scammer) does not yet work because the call ends quickly. Again, an easy fix.
+- Most issues have been fixed (9/21/17). For anything else, submit a bug to the issues page.
 
 # Instructions
 

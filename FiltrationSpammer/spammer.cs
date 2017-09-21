@@ -142,8 +142,6 @@ namespace FiltrationSpammer {
             } else {
                 subStatus = "Calling {" + number + "} from {" + number + "}";
             }
-
-
             if (callActive) {
                 Console.WriteLine("Call still in progress...");
                 return;
@@ -151,18 +149,12 @@ namespace FiltrationSpammer {
             Console.WriteLine("Trying to call {" + number + "} from {" + fromNumber + "}");
             Uri _msg = new Uri(String.Format("http://twimlets.com/echo?Twiml=<Response><Say>{0}</Say></Response>", sayMessage.Replace(" ", "+")));
             Console.WriteLine("Call TTS Uri: [" + _msg.ToString() + "]");
-
-
             mc = CallResource.Create(
                 to: new PhoneNumber(numberToCall),
                 from: new PhoneNumber(fromNumber),
                 record: recordAudio,
                 url: _msg
             );
-
-
-
-
         }
     }
 }
