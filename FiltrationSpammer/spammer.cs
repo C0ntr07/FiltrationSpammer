@@ -48,6 +48,8 @@ namespace FiltrationSpammer {
 
         private System.Windows.Forms.Timer tw;
 
+        private bool callActive = false;
+
         public Spammer() {
             tw = new System.Windows.Forms.Timer();
             tw.Interval = 250;
@@ -99,7 +101,8 @@ namespace FiltrationSpammer {
             new Thread(() => { // unmanaged anon thread
                 while (active) {
                     if (setBreak != false) break; // breaks out of loop, kills thread.
-                    if (inProgress) return;
+
+
                     if (numberIndex < outgoingNumbers.Length) {
                         tmpNumber = outgoingNumbers[numberIndex];
                         numberIndex++;
@@ -107,7 +110,8 @@ namespace FiltrationSpammer {
                         numberIndex = 0;
                         tmpNumber = outgoingNumbers[0];
                     }
-                    Call(numberToCall, tmpNumber);
+                    if (mc == null || callActive == false)
+                        Call(numberToCall, tmpNumber);
                     cnt += 1; // work counter.
                     Thread.Sleep(1000);
                 }
@@ -117,38 +121,46 @@ namespace FiltrationSpammer {
         private void Call(string number, string fromNumber) {
             // this is NOT done right. Sorry, I've been drinking while coding this.
             if (mc != null) {
-                if (mc.Status == CallResource.UpdateStatusEnum.Completed) {
-                    inProgress = false;
-                }
+
 
                 if (mc.Status == CallResource.StatusEnum.InProgress) {
                     subStatus = "Call in progess (" + number + ")";
-                    inProgress = true;
+                    callActive = true;
                 } else if (mc.Status == CallResource.StatusEnum.Ringing) {
                     subStatus = "Call ringing... (" + number + ")";
-                    inProgress = true;
+                    callActive = true;
                 } else if (mc.Status == CallResource.StatusEnum.Busy) {
-                    inProgress = false;
-                } else if (mc.Status == CallResource.StatusEnum.Canceled) {
-                    inProgress = false;
+                    subStatus = "Number busy (" + number + ")";
+                    callActive = false;
                 } else if (mc.Status == CallResource.StatusEnum.Failed) {
-                    inProgress = false;
+                    subStatus = "Call failed (" + number + ")";
+                    callActive = false;
+                } else if (mc.Status == CallResource.StatusEnum.Completed) {
+                    callActive = false;
+                    mc = null;
                 }
             } else {
-                inProgress = false;
                 subStatus = "Calling {" + number + "} from {" + number + "}";
             }
 
 
-            if (inProgress) return;
+            if (callActive) {
+                Console.WriteLine("Call still in progress...");
+                return;
+            }
             Console.WriteLine("Trying to call {" + number + "} from {" + fromNumber + "}");
+            Uri _msg = new Uri(String.Format("http://twimlets.com/echo?Twiml=<Response><Say>{0}</Say></Response>", sayMessage.Replace(" ", "+")));
+            Console.WriteLine("Call TTS Uri: [" + _msg.ToString() + "]");
+
 
             mc = CallResource.Create(
                 to: new PhoneNumber(numberToCall),
                 from: new PhoneNumber(fromNumber),
                 record: recordAudio,
-                url: new Uri(String.Format("http://twimlets.com/echo?Twiml=<Response><Say>{0}</Say></Response>", core.spamMessage.Replace(" ", "+")))
+                url: _msg
             );
+
+
 
 
         }

@@ -45,14 +45,7 @@ namespace FiltrationSpammer {
                 System.Collections.ArrayList ar = (System.Collections.ArrayList)ion2.settings.Get("tNum");
                 foreach (string at in ar.Cast<string>()) {
                     outboundNumbers.Items.Add(at);
-
-
-
                 }
-
-
-
-
 
             } catch (Exception ec) {
                 Console.WriteLine(ec.Message);

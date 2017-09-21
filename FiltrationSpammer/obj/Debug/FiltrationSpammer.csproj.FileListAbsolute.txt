@@ -57,3 +57,4 @@ C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\
 C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.csproj.GenerateResource.Cache
 C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.exe
 C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.pdb
+C:\Users\Lennon\Desktop\doc\code\github\FiltrationSpammer\FiltrationSpammer\obj\Debug\FiltrationSpammer.csprojResolveAssemblyReference.cache

@@ -287,6 +287,14 @@
             <param name="format">Format string of the log message.</param>
             <param name="args">An object array that contains zero or more objects to format.</param>
         </member>
+        <member name="M:Microsoft.IdentityModel.Logging.LogHelper.FormatInvariant(System.String,System.Object[])">
+            <summary>
+            Formats the string using InvariantCulture
+            </summary>
+            <param name="format">Format string.</param>
+            <param name="args">Format arguments.</param>
+            <returns>Formatted string.</returns>
+        </member>
         <member name="T:Microsoft.IdentityModel.Logging.LogMessages">
             <summary>
             Log messages and codes for Microsoft.IdentityModel.Logging

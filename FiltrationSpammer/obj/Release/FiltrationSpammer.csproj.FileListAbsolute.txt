@@ -18,3 +18,5 @@
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Release/FiltrationSpammer.exe
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Release/FiltrationSpammer.pdb
 /Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/obj/Release/FiltrationSpammer.csprojResolveAssemblyReference.cache
+/Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Release/Twilio.dll
+/Users/ktek/Desktop/doc/code/github/FiltrationSpammer/FiltrationSpammer/bin/Release/Twilio.xml
